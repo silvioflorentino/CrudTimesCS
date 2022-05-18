@@ -48,5 +48,42 @@ namespace CrudTimesCS.controller
                 throw;
             }
         }
+
+        public void pesquisarCodigoTimes()
+        {
+            SqlConnection cn = new SqlConnection(ConexaoBD.conectar());
+            SqlCommand cmd = new SqlCommand("pBuscaCodigoTimes", cn);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            try
+            {
+                cmd.Parameters.AddWithValue("@CodTimes", Times.CodTimes);
+                cn.Open();
+
+                var arrayDados = cmd.ExecuteReader();
+
+                if (arrayDados.Read())
+                {
+                    Times.CodTimes = Convert.ToInt32(arrayDados["CodTimes"]);
+                    Times.NomeTimes = arrayDados["NomeTimes"].ToString();
+                    Times.FraseTimes = arrayDados["FraseTimes"].ToString();
+                    Times.LogoTimes = (System.Array)arrayDados["LogoTimes"];
+                    Times.Retorno = "Sim";
+                }
+                else
+                {
+                    MessageBox.Show("Código não localizado","Atenção",
+                        MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                    Times.Retorno = "Não";
+                }
+
+            }
+            catch (Exception e)
+            {
+
+                MessageBox.Show(e.Message,"Erro",
+                    MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+        }
     }
 }

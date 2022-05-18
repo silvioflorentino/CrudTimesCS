@@ -35,10 +35,12 @@ namespace CrudTimesCS.view
             this.lblFraseTimes = new System.Windows.Forms.Label();
             this.tbxNomeTimes = new System.Windows.Forms.TextBox();
             this.tbxFraseTimes = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.btnCadastrarTimes = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.btnBuscarLogo = new System.Windows.Forms.Button();
+            this.openFileDialogLogo = new System.Windows.Forms.OpenFileDialog();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTituloTimes
@@ -46,9 +48,9 @@ namespace CrudTimesCS.view
             this.lblTituloTimes.AutoSize = true;
             this.lblTituloTimes.Font = new System.Drawing.Font("Times New Roman", 19F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblTituloTimes.ForeColor = System.Drawing.Color.Tomato;
-            this.lblTituloTimes.Location = new System.Drawing.Point(192, 36);
+            this.lblTituloTimes.Location = new System.Drawing.Point(168, 27);
             this.lblTituloTimes.Name = "lblTituloTimes";
-            this.lblTituloTimes.Size = new System.Drawing.Size(269, 36);
+            this.lblTituloTimes.Size = new System.Drawing.Size(223, 30);
             this.lblTituloTimes.TabIndex = 0;
             this.lblTituloTimes.Text = "Cadastro de Times";
             // 
@@ -56,9 +58,9 @@ namespace CrudTimesCS.view
             // 
             this.lblNomeTime.AutoSize = true;
             this.lblNomeTime.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblNomeTime.Location = new System.Drawing.Point(12, 94);
+            this.lblNomeTime.Location = new System.Drawing.Point(10, 70);
             this.lblNomeTime.Name = "lblNomeTime";
-            this.lblNomeTime.Size = new System.Drawing.Size(48, 20);
+            this.lblNomeTime.Size = new System.Drawing.Size(38, 15);
             this.lblNomeTime.TabIndex = 1;
             this.lblNomeTime.Text = "Time:";
             // 
@@ -66,41 +68,47 @@ namespace CrudTimesCS.view
             // 
             this.lblFraseTimes.AutoSize = true;
             this.lblFraseTimes.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblFraseTimes.Location = new System.Drawing.Point(12, 178);
+            this.lblFraseTimes.Location = new System.Drawing.Point(10, 134);
             this.lblFraseTimes.Name = "lblFraseTimes";
-            this.lblFraseTimes.Size = new System.Drawing.Size(50, 20);
+            this.lblFraseTimes.Size = new System.Drawing.Size(39, 15);
             this.lblFraseTimes.TabIndex = 2;
             this.lblFraseTimes.Text = "Frase:";
             // 
             // tbxNomeTimes
             // 
             this.tbxNomeTimes.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.tbxNomeTimes.Location = new System.Drawing.Point(12, 117);
+            this.tbxNomeTimes.Location = new System.Drawing.Point(10, 88);
+            this.tbxNomeTimes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbxNomeTimes.Name = "tbxNomeTimes";
-            this.tbxNomeTimes.Size = new System.Drawing.Size(380, 38);
+            this.tbxNomeTimes.Size = new System.Drawing.Size(333, 32);
             this.tbxNomeTimes.TabIndex = 3;
             // 
             // tbxFraseTimes
             // 
             this.tbxFraseTimes.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.tbxFraseTimes.Location = new System.Drawing.Point(12, 201);
+            this.tbxFraseTimes.Location = new System.Drawing.Point(10, 151);
+            this.tbxFraseTimes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbxFraseTimes.Name = "tbxFraseTimes";
-            this.tbxFraseTimes.Size = new System.Drawing.Size(594, 38);
+            this.tbxFraseTimes.Size = new System.Drawing.Size(520, 32);
             this.tbxFraseTimes.TabIndex = 4;
             // 
-            // pictureBox1
+            // pictureBoxLogo
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(12, 271);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(276, 121);
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
+            this.pictureBoxLogo.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.pictureBoxLogo.Location = new System.Drawing.Point(10, 203);
+            this.pictureBoxLogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBoxLogo.Name = "pictureBoxLogo";
+            this.pictureBoxLogo.Size = new System.Drawing.Size(158, 91);
+            this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxLogo.TabIndex = 5;
+            this.pictureBoxLogo.TabStop = false;
             // 
             // btnCadastrarTimes
             // 
-            this.btnCadastrarTimes.Location = new System.Drawing.Point(466, 341);
+            this.btnCadastrarTimes.Location = new System.Drawing.Point(371, 256);
+            this.btnCadastrarTimes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCadastrarTimes.Name = "btnCadastrarTimes";
-            this.btnCadastrarTimes.Size = new System.Drawing.Size(140, 51);
+            this.btnCadastrarTimes.Size = new System.Drawing.Size(122, 38);
             this.btnCadastrarTimes.TabIndex = 6;
             this.btnCadastrarTimes.Text = "Cadastrar";
             this.btnCadastrarTimes.UseVisualStyleBackColor = true;
@@ -108,24 +116,37 @@ namespace CrudTimesCS.view
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(339, 349);
+            this.button2.Location = new System.Drawing.Point(260, 262);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(88, 35);
+            this.button2.Size = new System.Drawing.Size(77, 26);
             this.button2.TabIndex = 7;
             this.button2.Text = "Cancelar";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // btnBuscarLogo
+            // 
+            this.btnBuscarLogo.Font = new System.Drawing.Font("Segoe UI", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnBuscarLogo.Location = new System.Drawing.Point(12, 299);
+            this.btnBuscarLogo.Name = "btnBuscarLogo";
+            this.btnBuscarLogo.Size = new System.Drawing.Size(156, 23);
+            this.btnBuscarLogo.TabIndex = 8;
+            this.btnBuscarLogo.Text = "Buscar Imagem";
+            this.btnBuscarLogo.UseVisualStyleBackColor = true;
+            this.btnBuscarLogo.Click += new System.EventHandler(this.btnBuscarLogo_Click);
+            // 
             // TelaCadastrarTimes
             // 
             this.AcceptButton = this.btnCadastrarTimes;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(641, 424);
+            this.ClientSize = new System.Drawing.Size(561, 334);
+            this.Controls.Add(this.btnBuscarLogo);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnCadastrarTimes);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pictureBoxLogo);
             this.Controls.Add(this.tbxFraseTimes);
             this.Controls.Add(this.tbxNomeTimes);
             this.Controls.Add(this.lblFraseTimes);
@@ -134,12 +155,13 @@ namespace CrudTimesCS.view
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.Name = "TelaCadastrarTimes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sistema Gerenciador de Jogos ";
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TelaCadastrarTimes_KeyPress);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -152,8 +174,10 @@ namespace CrudTimesCS.view
         private System.Windows.Forms.Label lblFraseTimes;
         private System.Windows.Forms.TextBox tbxNomeTimes;
         private System.Windows.Forms.TextBox tbxFraseTimes;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBoxLogo;
         private System.Windows.Forms.Button btnCadastrarTimes;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnBuscarLogo;
+        private System.Windows.Forms.OpenFileDialog openFileDialogLogo;
     }
 }
