@@ -160,6 +160,7 @@ namespace CrudTimesCS.view
             this.Name = "TelaCadastrarTimes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sistema Gerenciador de Jogos ";
+            this.Load += new System.EventHandler(this.TelaCadastrarTimes_Load);
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TelaCadastrarTimes_KeyPress);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             this.ResumeLayout(false);

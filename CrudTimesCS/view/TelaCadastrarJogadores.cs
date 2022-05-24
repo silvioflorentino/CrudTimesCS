@@ -16,5 +16,15 @@ namespace CrudTimesCS.view
         {
             InitializeComponent();
         }
+
+        private void btnJogadores_Click(object sender, EventArgs e)
+        {
+            if (tbxNomeJogadores.Text == "" || tbxEmailJogadores.Text == "")
+            {
+                MessageBox.Show("Digite Todas as informações", "Atenção",
+                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+        }
     }
 }

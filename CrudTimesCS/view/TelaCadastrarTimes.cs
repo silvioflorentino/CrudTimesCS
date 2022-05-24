@@ -96,5 +96,10 @@ namespace CrudTimesCS.view
                 pictureBoxLogo.Image = Image.FromFile(openFileDialogLogo.FileName); 
             }
         }
+
+        private void TelaCadastrarTimes_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

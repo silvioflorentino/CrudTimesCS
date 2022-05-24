@@ -85,5 +85,65 @@ namespace CrudTimesCS.controller
                     MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
+
+        public void deletarTimes()
+        {
+            SqlConnection cn = new SqlConnection(ConexaoBD.conectar());
+            SqlCommand cmd = new SqlCommand("pDeletarTimes", cn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            try
+            {
+                cmd.Parameters.AddWithValue("@CodTimes",Times.CodTimes);
+                cn.Open();
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Time excluído com sucesso",
+                    "Exclução",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("O Time não pode ser excluído",
+                    "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                if(cn.State != ConnectionState.Closed)
+                {
+                    cn.Close();
+                }
+            }
+        }
+
+        public void alterarTimes()
+        {
+            SqlConnection cn = new SqlConnection(ConexaoBD.conectar());
+            SqlCommand cmd = new SqlCommand("pAlterarTimes", cn);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            try
+            {
+                cmd.Parameters.AddWithValue("@CodTimes", Times.CodTimes);
+                cmd.Parameters.AddWithValue("@NomeTimes", Times.NomeTimes);
+                cmd.Parameters.AddWithValue("@FraseTimes", Times.FraseTimes);
+                cmd.Parameters.AddWithValue("@LogoTimes", Times.LogoTimes);
+
+                cn.Open();
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Time alterado com sucesso","Atenção",
+                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("O Time não foi Alterado",
+                    "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                if (cn.State != ConnectionState.Closed)
+                {
+                    cn.Close();
+                }
+            }
+        }
     }
 }
