@@ -126,5 +126,31 @@ namespace CrudTimesCS.view
                 pictureBoxLogo.Image = Image.FromFile(openFileDialogLogo.FileName);
             }
         }
+
+        private void btnBuscarNomeTime_Click(object sender, EventArgs e)
+        {
+            if (tbxNomeTime.Text == "")
+            {
+                MessageBox.Show("Digite um Time para a busca", "Atenção");
+                tbxNomeTime.Focus();
+
+                return;
+            }
+
+            Times.NomeTimes = tbxNomeTime.Text;
+
+            dataGridViewNome.DataSource = ManipulaTimes.pesquisarNomeTimes();
+            
+            dataGridViewNome.Columns[0].Visible = false;
+            dataGridViewNome.Columns[1].Visible = false;
+            dataGridViewNome.Columns[2].Visible = false;
+            dataGridViewNome.Columns[3].Visible = false;
+
+            dataGridViewNome.Columns[4].HeaderCell.Value = "Código"; 
+            dataGridViewNome.Columns[5].HeaderCell.Value = "Time";
+            dataGridViewNome.Columns[6].HeaderCell.Value = "Logo";
+            dataGridViewNome.Columns[7].HeaderCell.Value = "Frase";
+            
+        }
     }
 }

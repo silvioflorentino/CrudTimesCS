@@ -145,5 +145,30 @@ namespace CrudTimesCS.controller
                 }
             }
         }
+
+
+
+        public static BindingSource pesquisarNomeTimes()
+        {
+            SqlConnection cn = new SqlConnection(ConexaoBD.conectar());
+            SqlCommand cmd = new SqlCommand("pBuscaNomeTimes", cn);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@NomeTimes", Times.NomeTimes);
+                cn.Open();
+                cmd.ExecuteNonQuery();
+
+                SqlDataAdapter sqlData = new SqlDataAdapter(cmd);
+           
+                DataTable table = new DataTable();
+
+                    sqlData.Fill(table);
+
+                    BindingSource dados = new BindingSource();
+                    dados.DataSource = table;
+
+                    return dados;
+               
+        }
     }
 }
